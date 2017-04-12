@@ -1,2 +1,16 @@
 push和poll函数别忘了加到nuttx_px4fmu-v2_default.cmake里面注册函数列表
+第一步先配置uorb通信的程序，写出msg文件在CMakelists里加入这个msg文件。
 
+
+
+第二步写出xml消息然后用mavlink消息生成器来生成消息，将文件夹内的5个.h文件放到v2.0里面。
+
+第三步写出相应的uorb发送程序最好用线程写，写出相应的uorb接收程序最好用线程写
+
+然后实验一下uorb通信通过没有通过的话进行第4步
+
+第四步配置mavlink message cpp的设置用于打包发送mavlink包
+
+第五步配置mavlink receive cpp h的设置用于解码接受mavlink包（这里如果公告用到指针则需要在前面进行指针初始化为0的操作）
+
+第六步后在mavlink bridge那里把头文件路径加入
