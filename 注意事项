@@ -1,0 +1,2 @@
+push和poll函数别忘了加到nuttx_px4fmu-v2_default.cmake里面注册函数列表
+
